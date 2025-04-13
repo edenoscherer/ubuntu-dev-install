@@ -63,6 +63,7 @@ check_command sudo apt install git curl wget vim fonts-firacode build-essential 
 log "Configurando Git"
 check_command git config --global user.name "Edeno Scherer"
 check_command git config --global user.email edenoscherer@gmail.com
+check_command git config --global init.defaultBranch main
 # Usar credencial manager mais seguro se disponível
 if command -v git-credential-libsecret > /dev/null; then
     git config --global credential.helper libsecret
