@@ -57,7 +57,7 @@ log "Configurando comportamento geral do sistema"
 log "--> ⬇ Atualizando Sistema"
 check_command sudo apt update
 check_command sudo apt upgrade -y
-check_command sudo apt install git curl wget vim fonts-firacode build-essential -y
+check_command sudo apt install git curl wget vim fonts-firacode build-essential zip unzip -y
 
 # Configurar git
 log "Configurando Git"
@@ -130,12 +130,6 @@ cd "$HOME/Downloads" || exit 1
 check_command curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 check_command unzip -o awscliv2.zip
 check_command sudo ./aws/install --update
-
-# Instalar AWS SAM
-log "Instalando AWS SAM"
-check_command curl "https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip" -o "aws-sam-cli-linux-x86_64.zip"
-check_command unzip -o aws-sam-cli-linux-x86_64.zip -d sam-installation
-check_command sudo ./sam-installation/install --update
 
 # Instalar Docker
 log "Instalando Docker"
