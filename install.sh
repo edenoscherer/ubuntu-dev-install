@@ -75,7 +75,7 @@ fi
 # Instalar ZSH
 log "Instalando ZSH"
 check_command sudo apt install zsh -y
-check_command sudo chsh -s "$(which zsh)"
+check_command sudo chsh -s $(which zsh) $USER
 
 # Instalar Oh My Zsh e plugins
 log "Instalando Powerlevel10k"
